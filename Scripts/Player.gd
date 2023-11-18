@@ -15,9 +15,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	return
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
+func check_input(x_direction, y_direction):
 	if Input.is_action_just_pressed("move_right") and x_direction == 0:
 		x_direction =  1
 		y_direction =  0
@@ -30,7 +28,15 @@ func _process(delta):
 	if Input.is_action_just_pressed("move_up")    and y_direction == 0:
 		x_direction =  0
 		y_direction = -1
-		
+	direction = Vector2(x_direction, y_direction)
+	return direction
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	var velocity = Vector2.ZERO # The player's movement vector.
+	var direction = check_input(x_direction, y_direction)
+	x_direction = direction.x
+	y_direction = direction.y
 	velocity = WALKING_SPEED * Vector2(x_direction, y_direction)
 
 	if not(velocity == Vector2.ZERO):
