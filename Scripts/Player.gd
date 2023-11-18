@@ -1,5 +1,8 @@
 extends Area2D
 
+signal hit_house
+signal hit_car
+
 @export var WALKING_SPEED = 180
 @export var STARTING_POS  = Vector2(0,0)
 var screen_size 
@@ -46,4 +49,15 @@ func _process(delta):
 		# TODO: replace "placeholder" with "up" animation
 		$AnimatedSprite2D.animation = "placeholder"
 		#$AnimatedSprite2D.flip_v = velocity.y > 0
+	return
+
+
+func _on_body_entered(body):
+	# if   body == House: hit_house.emit()
+	# elif body == Car:   hit_car.emit()
+	if body.name in "House":
+		hit_house.emit()
+		#bounce()
+	elif body.name in "Mob":
+		hit_car.emit()
 	return
