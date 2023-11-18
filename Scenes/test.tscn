@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtbmllsojhc73"]
 
-[ext_resource type="Script" path="res://Scripts/HelloWorld.gd" id="1_g2wp7"]
-[ext_resource type="Script" path="res://Scenes/Polygon2D.gd" id="2_srjpo"]
+[ext_resource type="Script" path="res://Archive/HelloWorld.gd" id="1_obott"]
+[ext_resource type="Script" path="res://Archive/Polygon2D.gd" id="2_3gs8b"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("1_g2wp7")
+script = ExtResource("1_obott")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(6.10352e-05, 1.19209e-07)
 polygon = PackedVector2Array(-217, -62, -206, 188, 296, 176, 290, 61, -61, 71, -64, -257, -236, -256)
-script = ExtResource("2_srjpo")
+script = ExtResource("2_3gs8b")

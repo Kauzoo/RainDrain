@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://duoct31v344c6"]
+
+[node name="House" type="RigidBody2D"]
