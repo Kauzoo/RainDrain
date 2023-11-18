@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cnpxt8ok6j3di"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+metadata/_edit_group_ = true
