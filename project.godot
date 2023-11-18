@@ -15,9 +15,17 @@ run/main_scene="res://Scenes/test.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://Archive/icon.svg"
 
+[autoload]
+
+BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
+
 [dotnet]
 
 project/assembly_name="RainDrain"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg")
 
 [rendering]
 
