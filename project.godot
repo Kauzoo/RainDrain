@@ -19,6 +19,11 @@ config/icon="res://Sprites/Player/jackhammer1.png"
 
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="RainDrain"

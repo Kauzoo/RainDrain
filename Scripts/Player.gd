@@ -1,11 +1,11 @@
-extends Area2D
+extends CharacterBody2D
 
-signal hit_house
-signal hit_car
+#signal hit_house
+#signal hit_car
 
 signal deal_damage
 
-@export var WALKING_SPEED = 700
+@export var WALKING_SPEED = 30_000
 @export var STARTING_POS  = Vector2(0, 0)
 @export var JH_SPEED_MULT = 0.5
 @export var JH_LOCKOUT_TIMEOUT = 1.0
@@ -18,11 +18,11 @@ var jh_on = false
 var jh_last_switch = 0
 var jh_locked = false
 
-var old_pos = Vector2.ZERO
+#var old_pos = Vector2.ZERO
 
 # bounce stuff
-var bouncing = false
-var inputTimeout = 1.0
+#var bouncing = false
+#var inputTimeout = 1.0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -37,8 +37,8 @@ func jh_unlock():
 	jh_locked = false
 
 func check_input():
-	if bouncing:
-		return
+	#if bouncing:
+	#	return
 
 	var old_jh_on = jh_on
 	var new_jh_on = Input.is_action_pressed("jackhammer")
@@ -59,16 +59,30 @@ func check_input():
 	if Input.is_action_pressed("move_up"):
 		new_direction += Vector2(0, -1)
 
-	if new_direction != Vector2.ZERO:
-		direction = new_direction.normalized()
+	# if new_direction != Vector2.ZERO:
+	direction = new_direction.normalized()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	old_pos = position
-	var velocity = Vector2.ZERO # The player's movement vector.
+	# old_pos = position
 	check_input()
 
-	var v_max = WALKING_SPEED * direction
+	#position += velocity * delta
+
+	if jh_on:
+		deal_damage.emit(position, delta)
+
+	#$Camera2D.set_zoom(velocity * Vector2(0.5, 0.5))
+	#$Camera2D.zoom()
+
+	if direction.x != 0:
+		$AnimatedSprite2D.flip_h = direction.x < 0
+
+	$AnimatedSprite2D.animation = ("jackhammer" if jh_on else "idle")
+
+func _physics_process(delta):
+	# var velocity # = Vector2.ZERO # The player's movement vector.
+	var v_max = WALKING_SPEED * direction * delta
 	var v_min = v_max * JH_SPEED_MULT
 	var now = Time.get_ticks_msec()
 	if jh_on:
@@ -81,20 +95,13 @@ func _process(delta):
 			v_min, v_max,
 			clamp(now - jh_last_switch, 0, JH_SPEEDUP_TIME) / JH_SPEEDUP_TIME
 		)
+	self.move_and_slide()
+	#var collision = self.move_and_collide(velocity)
+	#if collision != null:
+	#	print(collision)
+	# print(delta)
 
-	position += velocity * delta
-
-	if jh_on:
-		deal_damage.emit(position, delta)
-
-	#$Camera2D.set_zoom(velocity * Vector2(0.5, 0.5))
-	#$Camera2D.zoom()
-
-	if velocity.x != 0:
-		$AnimatedSprite2D.flip_h = velocity.x < 0
-
-	$AnimatedSprite2D.animation = ("jackhammer" if jh_on else "idle")
-
+"""
 func bounce():
 	jh_on = false
 	try_wait()
@@ -124,3 +131,4 @@ func _on_body_entered(body):
 		hit_car.emit()
 	#$CollisionShape2D.set_deferred("disabled", true)
 	return
+"""

@@ -7,6 +7,6 @@
 
 [node name="CityMap" parent="." instance=ExtResource("2_kift4")]
 
-[node name="Player" parent="." instance=ExtResource("2_rsgde")]
+[node name="Player" parent="CityMap" instance=ExtResource("2_rsgde")]
 
-[connection signal="deal_damage" from="Player" to="CityMap" method="_on_deal_damage"]
+[connection signal="deal_damage" from="CityMap/Player" to="CityMap" method="_on_deal_damage"]

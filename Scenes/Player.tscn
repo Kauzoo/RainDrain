@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dp8wfhyfjbmoi" path="res://Sprites/Player/jackhammer1.png" id="4_wkiwt"]
 [ext_resource type="Texture2D" uid="uid://hovvf0wfmgnr" path="res://Sprites/Player/jackhammer2.png" id="5_miou4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui2qd"]
+size = Vector2(93, 93)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_sqsnj"]
 animations = [{
 "frames": [{
@@ -31,24 +34,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui2qd"]
-size = Vector2(317, 179)
-
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -81)
+collision_layer = 2
+motion_mode = 1
 script = ExtResource("1_ouvkx")
 metadata/_edit_group_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 46.5)
+shape = SubResource("RectangleShape2D_ui2qd")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 99
+z_index = 3
+z_as_relative = false
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_sqsnj")
 animation = &"jackhammer"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1.5)
-shape = SubResource("RectangleShape2D_ui2qd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
