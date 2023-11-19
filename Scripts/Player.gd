@@ -3,12 +3,14 @@ extends Area2D
 signal hit_house
 signal hit_car
 
-@export var WALKING_SPEED = 360
+signal deal_damage
+
+@export var WALKING_SPEED = 700
 @export var STARTING_POS  = Vector2(0, 0)
-@export var JH_SPEED_MULT = 0.4
-@export var JH_LOCKOUT_TIMEOUT = 0.5
+@export var JH_SPEED_MULT = 0.5
+@export var JH_LOCKOUT_TIMEOUT = 1.0
 @export var JH_SLOWDOWN_TIME = 0.2 * 1000
-@export var JH_SPEEDUP_TIME = 0.5 * 1000
+@export var JH_SPEEDUP_TIME = 2.0 * 1000
 
 var direction = Vector2.ZERO
 
@@ -60,9 +62,6 @@ func check_input():
 	if new_direction != Vector2.ZERO:
 		direction = new_direction.normalized()
 
-func lerp(a, b, t):
-	return (1 - t) * a + t * b
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	old_pos = position
@@ -84,6 +83,9 @@ func _process(delta):
 		)
 
 	position += velocity * delta
+
+	if jh_on:
+		deal_damage.emit(position, delta)
 
 	#$Camera2D.set_zoom(velocity * Vector2(0.5, 0.5))
 	#$Camera2D.zoom()

@@ -6,42 +6,49 @@
 texture = ExtResource("1_36bah")
 texture_region_size = Vector2i(320, 180)
 0:0/0 = 0
+0:0/0/custom_data_0 = true
 0:0/0/metadata/_better_terrain = {
 0: [0],
 8: [0],
 "type": 0
 }
 1:0/0 = 0
+1:0/0/custom_data_0 = true
 1:0/0/metadata/_better_terrain = {
 4: [0],
 12: [0],
 "type": 0
 }
 2:0/0 = 0
+2:0/0/custom_data_0 = true
 2:0/0/metadata/_better_terrain = {
 0: [0],
 12: [0],
 "type": 0
 }
 3:0/0 = 0
+3:0/0/custom_data_0 = true
 3:0/0/metadata/_better_terrain = {
 0: [0],
 4: [0],
 "type": 0
 }
 4:0/0 = 0
+4:0/0/custom_data_0 = true
 4:0/0/metadata/_better_terrain = {
 4: [0],
 8: [0],
 "type": 0
 }
 5:0/0 = 0
+5:0/0/custom_data_0 = true
 5:0/0/metadata/_better_terrain = {
 8: [0],
 12: [0],
 "type": 0
 }
 6:0/0 = 0
+6:0/0/custom_data_0 = true
 6:0/0/metadata/_better_terrain = {
 0: [0],
 4: [0],
@@ -49,6 +56,7 @@ texture_region_size = Vector2i(320, 180)
 "type": 0
 }
 7:0/0 = 0
+7:0/0/custom_data_0 = true
 7:0/0/metadata/_better_terrain = {
 0: [0],
 4: [0],
@@ -56,6 +64,7 @@ texture_region_size = Vector2i(320, 180)
 "type": 0
 }
 0:1/0 = 0
+0:1/0/custom_data_0 = true
 0:1/0/metadata/_better_terrain = {
 4: [0],
 8: [0],
@@ -63,6 +72,7 @@ texture_region_size = Vector2i(320, 180)
 "type": 0
 }
 1:1/0 = 0
+1:1/0/custom_data_0 = true
 1:1/0/metadata/_better_terrain = {
 0: [0],
 8: [0],
@@ -70,6 +80,7 @@ texture_region_size = Vector2i(320, 180)
 "type": 0
 }
 6:1/0 = 0
+6:1/0/custom_data_0 = true
 6:1/0/metadata/_better_terrain = {
 0: [0],
 4: [0],
@@ -442,13 +453,22 @@ texture_region_size = Vector2i(320, 180)
 }
 7:7/0 = 0
 4:7/0 = 0
+4:7/0/custom_data_1 = 1
 5:7/0 = 0
+5:7/0/custom_data_1 = 2
 6:7/0 = 0
+6:7/0/custom_data_1 = 3
 7:5/0 = 0
+7:5/0/custom_data_1 = 4
 7:3/0 = 0
+7:3/0/custom_data_1 = 5
 
 [resource]
 tile_size = Vector2i(320, 180)
+custom_data_layer_0/name = "is_road"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "damage_level"
+custom_data_layer_1/type = 2
 sources/1 = SubResource("TileSetAtlasSource_rbpc1")
 metadata/_better_terrain = {
 "decoration": ["Decoration", Color(0.411765, 0.411765, 0.411765, 1), 3, [], {
