@@ -3,12 +3,12 @@ extends Area2D
 signal hit_house
 signal hit_car
 
-@export var WALKING_SPEED = 180
-@export var STARTING_POS  = Vector2(0,0)
-var screen_size 
-var x_direction = 0
-var y_direction = 0
+@export var WALKING_SPEED = 360
+@export var STARTING_POS  = Vector2(0, 0)
+@export var JACKHAMMER_SPEED_MULT = 0.7
+
 var direction = Vector2.ZERO
+var jackhammer_on = false
 var velocity = Vector2.ZERO # The player's movement vector.
 var old_pos = Vector2.ZERO
 
@@ -19,61 +19,39 @@ var inputTimeout = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#hide()
-	#try_wait()
-	screen_size = get_viewport_rect().size
-	return
+	$AnimatedSprite2D.animation = "idle"
+	$AnimatedSprite2D.play()
 
 func check_input():
+	jackhammer_on = Input.is_action_pressed("jackhammer")
 	if(bouncing):
 		return
-	if Input.is_action_just_pressed("move_right") and x_direction == 0:
-		direction = Vector2(1, 0)
-		#x_direction =  1
-		#y_direction =  0
-	if Input.is_action_just_pressed("move_left")  and x_direction == 0:
-		direction = Vector2(-1, 0)
-		#x_direction = -1
-		#y_direction =  0
-	if Input.is_action_just_pressed("move_down")  and y_direction == 0:
-		direction = Vector2(0, 1)
-		#x_direction =  0
-		#y_direction =  1
-	if Input.is_action_just_pressed("move_up")    and y_direction == 0:
-		direction = Vector2(0, -1)
-		#x_direction =  0
-		#y_direction = -1
-	# direction = Vector2(x_direction, y_direction)
-	return
+	var new_direction = Vector2.ZERO
+	if Input.is_action_pressed("move_right"):
+		new_direction += Vector2(1, 0)
+	if Input.is_action_pressed("move_left"):
+		new_direction += Vector2(-1, 0)
+	if Input.is_action_pressed("move_down"):
+		new_direction += Vector2(0, 1)
+	if Input.is_action_pressed("move_up"):
+		new_direction += Vector2(0, -1)
+
+	if new_direction != Vector2.ZERO:
+		direction = new_direction.normalized()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#print($CollisionShape2D.disabled)
 	old_pos = position
 	velocity = Vector2.ZERO # The player's movement vector.
 	check_input()
-	#x_direction = direction[0]
-	#y_direction = direction[1]
-	#velocity = WALKING_SPEED * Vector2(x_direction, y_direction)
-	velocity = WALKING_SPEED * direction	
 
-	if not(velocity == Vector2.ZERO):
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
-	position += velocity * delta 
-	position  = position.clamp(Vector2.ZERO, screen_size)
-	
+	velocity = WALKING_SPEED * direction * (JACKHAMMER_SPEED_MULT if jackhammer_on else 1)
+	position += velocity * delta
+
 	if velocity.x != 0:
-		# TODO: replace "placeholder" with "walk" animation
-		$AnimatedSprite2D.animation = "placeholder"
-		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		# TODO: replace "placeholder" with "up" animation
-		$AnimatedSprite2D.animation = "placeholder"
-		#$AnimatedSprite2D.flip_v = velocity.y > 0
-	return
+
+	$AnimatedSprite2D.animation = "jackhammer" if jackhammer_on else "idle"
 
 func bounce():
 	try_wait()
