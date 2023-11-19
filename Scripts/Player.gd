@@ -18,6 +18,8 @@ var jh_on = false
 var jh_last_switch = 0
 var jh_locked = false
 
+var jh_audio = preload("res://Audio/jackh2.mp3")
+
 #var old_pos = Vector2.ZERO
 
 # bounce stuff
@@ -31,6 +33,7 @@ func _ready():
 	$AnimatedSprite2D.play()
 
 	jh_last_switch = Time.get_ticks_msec()
+	$AudioStreamPlayer.stream = jh_audio
 
 func jh_unlock():
 	await get_tree().create_timer(JH_LOCKOUT_TIMEOUT).timeout
@@ -39,12 +42,17 @@ func jh_unlock():
 func check_input():
 	#if bouncing:
 	#	return
+	
 
 	var old_jh_on = jh_on
 	var new_jh_on = Input.is_action_pressed("jackhammer")
 	if not jh_locked and old_jh_on != new_jh_on:
 		jh_on = new_jh_on
 		jh_last_switch = Time.get_ticks_msec()
+		if jh_on:
+			$AudioStreamPlayer.play()
+		else:
+			$AudioStreamPlayer.stop()
 	if not old_jh_on and new_jh_on and not jh_locked:
 		jh_locked = true
 		jh_unlock()
