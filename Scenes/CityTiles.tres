@@ -1,0 +1,442 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ckoohj8r4bgb1"]
+
+[ext_resource type="Texture2D" uid="uid://cjxldt6sabnds" path="res://Sprites/city_tiles.png" id="1_36bah"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbpc1"]
+texture = ExtResource("1_36bah")
+texture_region_size = Vector2i(320, 180)
+0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+0: [0],
+8: [0],
+"type": 0
+}
+1:0/0 = 0
+1:0/0/metadata/_better_terrain = {
+4: [0],
+12: [0],
+"type": 0
+}
+2:0/0 = 0
+2:0/0/metadata/_better_terrain = {
+0: [0],
+12: [0],
+"type": 0
+}
+3:0/0 = 0
+3:0/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+"type": 0
+}
+4:0/0 = 0
+4:0/0/metadata/_better_terrain = {
+4: [0],
+8: [0],
+"type": 0
+}
+5:0/0 = 0
+5:0/0/metadata/_better_terrain = {
+8: [0],
+12: [0],
+"type": 0
+}
+6:0/0 = 0
+6:0/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+12: [0],
+"type": 0
+}
+7:0/0 = 0
+7:0/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+"type": 0
+}
+0:1/0 = 0
+0:1/0/metadata/_better_terrain = {
+4: [0],
+8: [0],
+12: [0],
+"type": 0
+}
+1:1/0 = 0
+1:1/0/metadata/_better_terrain = {
+0: [0],
+8: [0],
+12: [0],
+"type": 0
+}
+6:1/0 = 0
+6:1/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+12: [0],
+"type": 0
+}
+0:2/0 = 0
+0:2/0/metadata/_better_terrain = {
+8: [1],
+11: [0],
+12: [1],
+"type": 1
+}
+1:2/0 = 0
+1:2/0/metadata/_better_terrain = {
+0: [1],
+12: [1],
+15: [0],
+"type": 1
+}
+2:2/0 = 0
+2:2/0/metadata/_better_terrain = {
+0: [1],
+3: [0],
+4: [1],
+"type": 1
+}
+3:2/0 = 0
+3:2/0/metadata/_better_terrain = {
+4: [1],
+7: [0],
+8: [1],
+"type": 1
+}
+4:2/0 = 0
+4:2/0/metadata/_better_terrain = {
+0: [1],
+8: [1],
+11: [0],
+12: [1],
+15: [0],
+"type": 1
+}
+5:2/0 = 0
+5:2/0/metadata/_better_terrain = {
+0: [1],
+3: [0],
+4: [1],
+8: [1],
+11: [0],
+12: [1],
+"type": 1
+}
+6:2/0 = 0
+6:2/0/metadata/_better_terrain = {
+4: [1],
+7: [0],
+8: [1],
+11: [0],
+12: [1],
+"type": 1
+}
+7:2/0 = 0
+7:2/0/metadata/_better_terrain = {
+0: [1],
+3: [0],
+4: [1],
+12: [1],
+15: [0],
+"type": 1
+}
+0:3/0 = 0
+0:3/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+7: [0],
+8: [1],
+12: [1],
+15: [0],
+"type": 1
+}
+1:3/0 = 0
+1:3/0/metadata/_better_terrain = {
+0: [1],
+3: [0],
+4: [1],
+7: [0],
+8: [1],
+"type": 1
+}
+2:3/0 = 0
+2:3/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+7: [0],
+8: [1],
+12: [1],
+15: [0],
+"type": 1
+}
+3:3/0 = 0
+3:3/0/metadata/_better_terrain = {
+0: [1],
+3: [0],
+4: [1],
+8: [1],
+11: [0],
+12: [1],
+"type": 1
+}
+4:3/0 = 0
+4:3/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+7: [0],
+8: [1],
+11: [0],
+12: [1],
+15: [0],
+"type": 1
+}
+5:3/0 = 0
+5:3/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+8: [1],
+11: [0],
+12: [1],
+15: [0],
+"type": 1
+}
+6:3/0 = 0
+6:3/0/metadata/_better_terrain = {
+0: [1],
+3: [0],
+4: [1],
+7: [0],
+8: [1],
+11: [0],
+12: [1],
+15: [0],
+"type": 1
+}
+0:4/0 = 0
+0:4/0/metadata/_better_terrain = {
+0: [1],
+8: [1],
+12: [0],
+"type": 1
+}
+1:4/0 = 0
+1:4/0/metadata/_better_terrain = {
+0: [0],
+4: [1],
+12: [1],
+"type": 1
+}
+2:4/0 = 0
+2:4/0/metadata/_better_terrain = {
+0: [1],
+4: [0],
+8: [1],
+"type": 1
+}
+3:4/0 = 0
+3:4/0/metadata/_better_terrain = {
+4: [1],
+8: [0],
+12: [1],
+"type": 1
+}
+4:4/0 = 0
+4:4/0/metadata/_better_terrain = {
+0: [1],
+8: [1],
+12: [0],
+"type": 1
+}
+5:4/0 = 0
+5:4/0/metadata/_better_terrain = {
+4: [1],
+8: [0],
+12: [1],
+"type": 1
+}
+6:4/0 = 0
+6:4/0/metadata/_better_terrain = {
+0: [0],
+4: [1],
+8: [1],
+12: [0],
+"type": 1
+}
+7:4/0 = 0
+7:4/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [1],
+12: [1],
+"type": 1
+}
+0:5/0 = 0
+0:5/0/metadata/_better_terrain = {
+0: [1],
+4: [0],
+8: [0],
+12: [1],
+"type": 1
+}
+1:5/0 = 0
+1:5/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+8: [0],
+12: [0],
+"type": 1
+}
+2:5/0 = 0
+2:5/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+12: [1],
+"type": 1
+}
+3:5/0 = 0
+3:5/0/metadata/_better_terrain = {
+0: [1],
+8: [0],
+12: [0],
+"type": 1
+}
+4:5/0 = 0
+4:5/0/metadata/_better_terrain = {
+0: [0],
+4: [1],
+8: [0],
+12: [0],
+"type": 1
+}
+5:5/0 = 0
+5:5/0/metadata/_better_terrain = {
+0: [0],
+8: [1],
+12: [0],
+"type": 1
+}
+6:5/0 = 0
+6:5/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+12: [0],
+"type": 1
+}
+0:6/0 = 0
+0:6/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+8: [1],
+12: [0],
+"type": 1
+}
+1:6/0 = 0
+1:6/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+8: [1],
+12: [0],
+"type": 1
+}
+2:6/0 = 0
+2:6/0/metadata/_better_terrain = {
+0: [0],
+4: [1],
+8: [1],
+12: [1],
+"type": 1
+}
+3:6/0 = 0
+3:6/0/metadata/_better_terrain = {
+0: [0],
+4: [1],
+8: [1],
+12: [1],
+"type": 1
+}
+4:6/0 = 0
+4:6/0/metadata/_better_terrain = {
+0: [1],
+4: [0],
+8: [1],
+12: [1],
+"type": 1
+}
+5:6/0 = 0
+5:6/0/metadata/_better_terrain = {
+0: [1],
+4: [0],
+8: [1],
+12: [1],
+"type": 1
+}
+6:6/0 = 0
+6:6/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+8: [0],
+12: [1],
+"type": 1
+}
+7:6/0 = 0
+7:6/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+8: [0],
+12: [1],
+"type": 1
+}
+0:7/0 = 0
+0:7/0/metadata/_better_terrain = {
+0: [0],
+4: [1],
+8: [1],
+12: [0],
+"type": 1
+}
+1:7/0 = 0
+1:7/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [1],
+12: [1],
+"type": 1
+}
+2:7/0 = 0
+2:7/0/metadata/_better_terrain = {
+0: [1],
+4: [0],
+8: [0],
+12: [1],
+"type": 1
+}
+3:7/0 = 0
+3:7/0/metadata/_better_terrain = {
+0: [1],
+4: [1],
+8: [0],
+12: [0],
+"type": 1
+}
+7:7/0 = 0
+
+[resource]
+tile_size = Vector2i(320, 180)
+sources/1 = SubResource("TileSetAtlasSource_rbpc1")
+metadata/_better_terrain = {
+"decoration": ["Decoration", Color(0.411765, 0.411765, 0.411765, 1), 3, [], {
+"path": "res://addons/better-terrain/icons/Decoration.svg"
+}],
+"terrains": [["road", Color(0.105882, 0.972549, 0.792157, 1), 0, [], {
+"coord": Vector2i(0, 0),
+"source_id": 1
+}], ["sidewalk", Color(0.87451, 0.333333, 0.168627, 1), 0, [], {
+"coord": Vector2i(6, 5),
+"source_id": 1
+}]],
+"version": "0.2"
+}
