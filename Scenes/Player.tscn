@@ -1,8 +1,32 @@
-[gd_scene format=3 uid="uid://bx1drgo2mrbx6"]
+[gd_scene load_steps=5 format=3 uid="uid://bx1drgo2mrbx6"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ouvkx"]
+[ext_resource type="Texture2D" uid="uid://cfj78mropueyr" path="res://Sprites/Roads/nswe.png" id="2_3mhth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqsnj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3mhth")
+}],
+"loop": true,
+"name": &"placeholder",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui2qd"]
+size = Vector2(317, 179)
 
 [node name="Player" type="Area2D"]
+script = ExtResource("1_ouvkx")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sqsnj")
+animation = &"placeholder"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_ui2qd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
