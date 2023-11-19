@@ -47,4 +47,8 @@ animation = &"jackhammer"
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_ui2qd")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
