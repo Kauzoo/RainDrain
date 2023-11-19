@@ -164,6 +164,7 @@ texture_region_size = Vector2i(320, 180)
 2:3/0 = 0
 2:3/0/metadata/_better_terrain = {
 0: [1],
+3: [0],
 4: [1],
 7: [0],
 8: [1],
@@ -176,6 +177,7 @@ texture_region_size = Vector2i(320, 180)
 0: [1],
 3: [0],
 4: [1],
+7: [0],
 8: [1],
 11: [0],
 12: [1],
