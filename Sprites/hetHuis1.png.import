@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp8wfhyfjbmoi"
-path="res://.godot/imported/jackhammer1.png-ac73fcb3754032e88dbea838ce43bda3.ctex"
+uid="uid://dplxxia4oi50c"
+path="res://.godot/imported/hetHuis1.png-db8c0f2943cded671cebaaa30c436bdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/jackhammer1.png"
-dest_files=["res://.godot/imported/jackhammer1.png-ac73fcb3754032e88dbea838ce43bda3.ctex"]
+source_file="res://Sprites/hetHuis1.png"
+dest_files=["res://.godot/imported/hetHuis1.png-db8c0f2943cded671cebaaa30c436bdd.ctex"]
 
 [params]
 

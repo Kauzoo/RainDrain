@@ -1,16 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx1drgo2mrbx6"]
+[gd_scene load_steps=8 format=3 uid="uid://bx1drgo2mrbx6"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ouvkx"]
-[ext_resource type="Texture2D" uid="uid://cfj78mropueyr" path="res://Sprites/Roads/nswe.png" id="2_3mhth"]
+[ext_resource type="Texture2D" uid="uid://nd4uucxmjd4s" path="res://Sprites/Player/idle1.png" id="2_fj4iq"]
+[ext_resource type="Texture2D" uid="uid://7kg8k5w16k23" path="res://Sprites/Player/idle2.png" id="3_ej5uc"]
+[ext_resource type="Texture2D" uid="uid://dp8wfhyfjbmoi" path="res://Sprites/Player/jackhammer1.png" id="4_wkiwt"]
+[ext_resource type="Texture2D" uid="uid://hovvf0wfmgnr" path="res://Sprites/Player/jackhammer2.png" id="5_miou4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sqsnj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_3mhth")
+"texture": ExtResource("2_fj4iq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ej5uc")
 }],
 "loop": true,
-"name": &"placeholder",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wkiwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_miou4")
+}],
+"loop": true,
+"name": &"jackhammer",
 "speed": 5.0
 }]
 
@@ -22,11 +39,16 @@ script = ExtResource("1_ouvkx")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 99
 sprite_frames = SubResource("SpriteFrames_sqsnj")
-animation = &"placeholder"
+animation = &"jackhammer"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_ui2qd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
