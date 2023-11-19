@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7gcjn63ghuk8"
-path="res://.godot/imported/Blumetopf.png-e1cf5313d55e7f1d8406d0df3794618b.ctex"
+uid="uid://cgme0ywgpda2n"
+path="res://.godot/imported/cracks4.png-1ccbab7cce53039c379c019b04b79fd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sidewalks/Blumetopf.png"
-dest_files=["res://.godot/imported/Blumetopf.png-e1cf5313d55e7f1d8406d0df3794618b.ctex"]
+source_file="res://Sprites/Cracks/cracks4.png"
+dest_files=["res://.godot/imported/cracks4.png-1ccbab7cce53039c379c019b04b79fd8.ctex"]
 
 [params]
 

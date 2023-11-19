@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7gcjn63ghuk8"
-path="res://.godot/imported/Blumetopf.png-e1cf5313d55e7f1d8406d0df3794618b.ctex"
+uid="uid://cjxldt6sabnds"
+path="res://.godot/imported/city_tiles.png-cbc96adfd19563b857c55ee0d49f8acc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sidewalks/Blumetopf.png"
-dest_files=["res://.godot/imported/Blumetopf.png-e1cf5313d55e7f1d8406d0df3794618b.ctex"]
+source_file="res://Sprites/city_tiles.png"
+dest_files=["res://.godot/imported/city_tiles.png-cbc96adfd19563b857c55ee0d49f8acc.ctex"]
 
 [params]
 
